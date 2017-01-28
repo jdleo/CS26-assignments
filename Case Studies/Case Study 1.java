@@ -26,9 +26,8 @@ public class Tutorial1 {
 		
 		//original input was string so we'll parse it to double
 		sales = Double.parseDouble(input);
-		
-		//determine rate
 		if (sales<= 0) {
+			rate = 0.00;
 			JOptionPane.showMessageDialog(null, "Your input was invalid. Sales must be greater than 0.");
 		} else if(sales<10000) {
 			rate = 0.05;
@@ -41,5 +40,15 @@ public class Tutorial1 {
 		} else {
 			rate = 0.16;
 		}
+		
+		commission = sales * rate;
+		
+		input = JOptionPane.showInputDialog("How much do you want for the pay advance?");
+		advance = Double.parseDouble(input);
+		
+		double commissionPay = (commission - advance);
+		totalPay = sales + commissionPay;
+		
+		JOptionPane.showMessageDialog(null, String.format("Your pay this month was $%s", totalPay));	
 	}
 }
