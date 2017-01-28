@@ -25,6 +25,21 @@ public class Tutorial1 {
 		input = JOptionPane.showInputDialog("Enter your total sales this month");
 		
 		//original input was string so we'll parse it to double
-		sales = Double.parseDouble(input);	
+		sales = Double.parseDouble(input);
+		
+		//determine rate
+		if (sales<= 0) {
+			JOptionPane.showMessageDialog(null, "Your input was invalid. Sales must be greater than 0.");
+		} else if(sales<10000) {
+			rate = 0.05;
+		} else if(sales<15000) {
+			rate = 0.10;
+		} else if(sales<18000) {
+			rate = 0.12;
+		} else if (sales<22000) {
+			rate = 0.15;
+		} else {
+			rate = 0.16;
+		}
 	}
 }
