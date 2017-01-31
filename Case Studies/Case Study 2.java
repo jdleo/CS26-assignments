@@ -47,13 +47,20 @@ public class cs2 {
 		term = Math.pow((1+interestRate/12.0), (12.0 * years));
 		payment = (loanAmount * interestRate/12.0 * term) / (term - 1);
 		numberOfPayments = 12 * (int)years;
+		System.out.println(String.format("Monthly payment: $%.2f", payment));
 		
 		for (int currentMonth = 1;currentMonth <= numberOfPayments;currentMonth = currentMonth + 1) {
+			double principal;
 			double thisMonthInterest = interestRate / 12.0 * balance;
-			double principal = payment - thisMonthInterest;
-			balance -= payment;
+			if (currentMonth != numberOfPayments) {
+				principal = payment - thisMonthInterest;
+			} else {
+				principal = balance;
+				payment = balance + thisMonthInterest;
+			}
+			balance -= (principal);
 			String paymentLine = String.format("Month %s | Interest: $%.2f | Principal: $%.2f | Balance: $%.2f", currentMonth, thisMonthInterest, principal, balance);
 			System.out.println(paymentLine);
-		}		
+		}	
 	}
 }
