@@ -22,12 +22,19 @@ public class cs2 {
 		String path;
 		boolean append = false;
 		
+		//variables for payment calc
+		double term, payment, balance;
+		int numberOfPayments;
+		
 		//greeting and getting loan amount
 		String name = JOptionPane.showInputDialog("What is your name?");
 		String loanString = JOptionPane.showInputDialog(String.format("Hello, %s. Please enter your loan amount.", name));
 		
 		//parse loan to double
 		double loanAmount = Double.parseDouble(loanString);
+		
+		//initial balance will be the same as loan amount, obvi
+		balance = loanAmount;
 		
 		//get interest rate
 		String rateString = JOptionPane.showInputDialog("Enter the interest rate.");
@@ -37,6 +44,16 @@ public class cs2 {
 		String yearsString = JOptionPane.showInputDialog("How many years do you want the loan for?");
 		double years = Double.parseDouble(yearsString);	
 		
+		term = Math.pow((1+interestRate/12.0), (12.0 * years));
+		payment = (loanAmount * interestRate/12.0 * term) / (term - 1);
+		numberOfPayments = 12 * (int)years;
+		
+		for (int currentMonth = 1;currentMonth <= numberOfPayments;currentMonth = currentMonth + 1) {
+			double thisMonthInterest = interestRate / 12.0 * balance;
+			double principal = payment - thisMonthInterest;
+			balance -= payment;
+			String paymentLine = String.format("Month %s | Interest: $%.2f | Principal: $%.2f | Balance: $%.2f", currentMonth, thisMonthInterest, principal, balance);
+			System.out.println(paymentLine);
+		}		
 	}
-
 }
