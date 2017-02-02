@@ -30,7 +30,15 @@ public class cs3 {
 		
 		PinTester pT = new PinTester();
 		pT.setPinAttempt(PIN_ATTEMPT);
-		pT.testPin();
+	
+		//now that we set our pin attempt, let's check if it was the real pin or not
+		if (pT.testPin()) {
+			String msg = String.format("AUTHENTICATED! %s was the correct pin!", PIN_ATTEMPT);
+			JOptionPane.showMessageDialog(null, msg);
+		} else {
+			String msg = String.format("DENIED! %s was an incorrect pin!", PIN_ATTEMPT);
+			JOptionPane.showMessageDialog(null, msg);
+		}
 		
 		
 		
