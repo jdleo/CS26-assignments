@@ -14,43 +14,58 @@ import javax.swing.JOptionPane;
 
 public class cs3 {
 	
-	public class PinTester {
-		
-		//pin attempt private var
-		private ArrayList<Integer> pinAttempt = new ArrayList<Integer>();
-		
-		//this is the real pin we are testing against
-		private ArrayList<Integer> realPin = new ArrayList<Integer>(
-				Arrays.asList(1,5,7,2));
-		
-		//getter
-		public ArrayList<Integer> getPinAttempt() {
-			return pinAttempt;
-		}
-
-		//setter
-		public void setPinAttempt(ArrayList<Integer> pinAttempt) {
-			this.pinAttempt = pinAttempt;
-		}
-		
-		//method for testing pin. either returns true or false
-		public boolean testPin(ArrayList<Integer> p) {
-			if (p == realPin) {
-				System.out.println("Correct Pin");
-				return true;
-			} else {
-				System.out.println("Wrong Pin");
-				return false;
-			}
-		}
-		
-		
-		
-		
-	}
+	
 
 	public static void main(String[] args) {
 		
+		//test, will be user input later
+		ArrayList<Integer> arr = new ArrayList<Integer>(
+				Arrays.asList(1,2,7,2));
+		
+		PinTester pT = new PinTester();
+		pT.setPinAttempt(arr);
+		
+		
+		pT.testPin();
+		
+		
+		
 	}
 
+}
+
+class PinTester {
+	
+	//pin attempt private var
+	private ArrayList<Integer> pinAttempt = new ArrayList<Integer>();
+	
+	//this is the real pin we are testing against
+    ArrayList<Integer> realPin = new ArrayList<Integer>(
+			Arrays.asList(1,5,7,2));
+	
+	//getter
+	public ArrayList<Integer> getPinAttempt() {
+		return pinAttempt;
+	}
+
+	//setter
+	public void setPinAttempt(ArrayList<Integer> pinAttempt) {
+		this.pinAttempt = pinAttempt;
+	}
+	
+	public boolean testPin() {
+		if (this.pinAttempt.equals(this.realPin)) {
+			System.out.println(this.pinAttempt);
+			System.out.println("Correct Pin");
+			return true;
+		} else {
+			System.out.println(this.pinAttempt);
+			System.out.println("Wrong Pin");
+			return false;
+		}
+	}
+	
+	
+	
+	
 }
