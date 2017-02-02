@@ -33,6 +33,7 @@ public class cs3 {
 			this.pinAttempt = pinAttempt;
 		}
 		
+		//method for testing pin. either returns true or false
 		public boolean testPin(ArrayList<Integer> p) {
 			if (p == realPin) {
 				System.out.println("Correct Pin");
