@@ -8,3 +8,13 @@ program stores each digit in an element of an int array.) The program also retri
 copy of the customer’s actual PIN from a database, as an int array. If these arrays match,
 then the customer’s identity is validated.
 */
+
+
+public class cs3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
