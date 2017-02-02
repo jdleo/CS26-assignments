@@ -18,14 +18,18 @@ public class cs3 {
 
 	public static void main(String[] args) {
 		
-		//test, will be user input later
-		ArrayList<Integer> arr = new ArrayList<Integer>(
-				Arrays.asList(1,2,7,2));
+		String pinString = JOptionPane.showInputDialog("Please enter your pin");
+		
+		ArrayList<Integer> PIN_ATTEMPT = new ArrayList<Integer>();
+		
+		//iterate over pin attempt string
+		for (int i = 0;i < pinString.length();i++) {
+			int num = Character.getNumericValue(pinString.charAt(i));
+			PIN_ATTEMPT.add(num);
+		}
 		
 		PinTester pT = new PinTester();
-		pT.setPinAttempt(arr);
-		
-		
+		pT.setPinAttempt(PIN_ATTEMPT);
 		pT.testPin();
 		
 		
