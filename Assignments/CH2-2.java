@@ -7,3 +7,12 @@ Write a program that displays the following:
 -the approximate number of customers who purchase one or more energy drinks per week
 -the approximate number of customers who prefer citrus-flavor energy drinks
 */
+
+public class ch2_assignment2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
