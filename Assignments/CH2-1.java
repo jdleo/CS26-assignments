@@ -7,3 +7,12 @@ the purchase, the state sales tax, the county sales tax, the total sales tax,
 and the total of the sale (which is the sum of the amount of purchase plus the total sales tax)
 Hint: Use 0.04 for 4 percent, 0.02 for 2 percent in the calculation.
 */
+
+public class ch2_assignment1 {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}
