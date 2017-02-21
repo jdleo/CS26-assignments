@@ -38,6 +38,14 @@ public class ch4_assignment {
 			JOptionPane.showMessageDialog(null, msg);
 		}
 		
+		//display the total amounts
+		totalVacant = (totalRooms - totalOccupied);
+		occupancyRate = (double)totalOccupied / (double)totalRooms;
+		String msg = String.format("The hotel has %s rooms, %s rooms are occupied," + 
+		" %s rooms are vacant. The overall occupancy rate for the hotel is %.2f", totalRooms, totalOccupied, totalVacant, occupancyRate);
+		
+		JOptionPane.showMessageDialog(null, msg);
+		
 		
 		
 		
