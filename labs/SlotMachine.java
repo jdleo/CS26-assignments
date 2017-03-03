@@ -29,7 +29,7 @@ public class SlotMachine {
 	public static void main(String[] args) {
 
 		boolean cont = false; //flag for continuing the do-while loop
-		double bet;
+		double bet, runningTotal, deposit;
 		String word1, word2, word3;
 		char response;
 
