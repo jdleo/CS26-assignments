@@ -11,7 +11,7 @@ public class SlotMachine {
 	 *  @param word 2
 	 *  @param word 3
 	 */
-	public static void play(double bet, String w1, String w2, String w3) {
+	public static double play(double bet, String w1, String w2, String w3) {
 		double bonus;
 
 		if ( w1.equals(w2) && w2.equals(w3) ) {
@@ -21,30 +21,50 @@ public class SlotMachine {
 		} else {
 			bonus = 0.00;
 		}
-
+		
 		String msg = String.format("You won $%.2f!" , bonus);
 		JOptionPane.showMessageDialog(null, msg);
+		
+		return bonus;
 	}
 
 	public static void main(String[] args) {
 
 		boolean cont = false; //flag for continuing the do-while loop
-		double bet, runningTotal, deposit;
+		double bet, balance;
 		String word1, word2, word3;
 		char response;
-
+		
+		//validate initial deposit amount with while{ try-catch }
+		while (true) {
+			String depositInput = JOptionPane.showInputDialog("Enter your initial deposit amount");
+			try {
+				balance = Double.parseDouble(depositInput);
+				break;
+				
+			} catch (NumberFormatException ignore) {
+				JOptionPane.showMessageDialog(null, "Invalid number");
+			}
+		}
+		
 		//OUTER LOOP.
 		do {
 
-			//get the bet
-			bet = getBet();
-
+			//get the bet, but validate its not more than balance
+			do {
+				bet = getBet();
+			} while (bet < 0 || bet > balance);
+			balance -= bet;
+			
 			//select the 3 words
 			word1 = picker(); word2 = picker(); word3 = picker();
 			JOptionPane.showMessageDialog(null, String.format("%s, %s, %s", word1, word2, word3));
 
 			//play the game
-			play(bet, word1, word2, word3);
+			balance += play(bet, word1, word2, word3);
+			
+			//display current balance
+			JOptionPane.showMessageDialog(null, String.format("Balance: $%.2f", balance));
 
 			//determine if they want to play again or not
 			response = again();
@@ -64,7 +84,7 @@ public class SlotMachine {
 	public static double getBet() {
 		String betInput = JOptionPane.showInputDialog("Enter the amount of bet:");
 		double bet = Double.parseDouble(betInput);
-
+		
 		return bet;
 	}
 
