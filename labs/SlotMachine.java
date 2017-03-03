@@ -61,6 +61,8 @@ public class SlotMachine {
 			
 			// ***TO DO: REPLACE THIS DIALOG, WITH THE THREE IMAGES INSTEAD
 			JOptionPane.showMessageDialog(null, String.format("%s, %s, %s", word1, word2, word3));
+			display(word1, word2, word3);
+			
 
 			//play the game
 			balance += play(bet, word1, word2, word3);
@@ -124,5 +126,34 @@ public class SlotMachine {
 
 		return getInput.charAt(0);
 	}
+	
+	/** method for displaying the three slot images
+	 *  @param all parameters are the image strings
+	 */
+	public static void display(String w1, String w2, String w3) {
+		
+		HashMap<String, String> h = new HashMap<String, String>() {{
+			put("Cherry", "filepath");
+			put("Orange", "filepath");
+			put("Plum", "filepath");
+			put("Melon", "filepath");
+			put("Bar", "filepath");
+			put("Apple", "filepath");
+		}};
+		
+		ImageIcon icon1 = new ImageIcon(h.get(w1));
+        JOptionPane.showMessageDialog(null, w1,
+                "Customized Dialog", JOptionPane.INFORMATION_MESSAGE, icon1);
+        
+        ImageIcon icon2 = new ImageIcon(h.get(w2));
+        JOptionPane.showMessageDialog(null, w2,
+                "Customized Dialog", JOptionPane.INFORMATION_MESSAGE, icon2);
+        
+        ImageIcon icon3 = new ImageIcon(h.get(w3));
+        JOptionPane.showMessageDialog(null, w3,
+                "Customized Dialog", JOptionPane.INFORMATION_MESSAGE, icon3);
+		
+	}
+	
 
 }
