@@ -143,15 +143,15 @@ public class SlotMachine {
 		
 		ImageIcon icon1 = new ImageIcon(h.get(w1));
         JOptionPane.showMessageDialog(null, w1,
-                "Customized Dialog", JOptionPane.INFORMATION_MESSAGE, icon1);
+                "Slot 1", JOptionPane.INFORMATION_MESSAGE, icon1);
         
         ImageIcon icon2 = new ImageIcon(h.get(w2));
         JOptionPane.showMessageDialog(null, w2,
-                "Customized Dialog", JOptionPane.INFORMATION_MESSAGE, icon2);
+                "Slot 2", JOptionPane.INFORMATION_MESSAGE, icon2);
         
         ImageIcon icon3 = new ImageIcon(h.get(w3));
         JOptionPane.showMessageDialog(null, w3,
-                "Customized Dialog", JOptionPane.INFORMATION_MESSAGE, icon3);
+                "Slot 3", JOptionPane.INFORMATION_MESSAGE, icon3);
 		
 	}
 	
