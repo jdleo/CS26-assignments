@@ -58,6 +58,8 @@ public class SlotMachine {
 			
 			//select the 3 words
 			word1 = picker(); word2 = picker(); word3 = picker();
+			
+			// ***TO DO: REPLACE THIS DIALOG, WITH THE THREE IMAGES INSTEAD
 			JOptionPane.showMessageDialog(null, String.format("%s, %s, %s", word1, word2, word3));
 
 			//play the game
