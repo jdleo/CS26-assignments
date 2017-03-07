@@ -9,14 +9,17 @@ public class RockPaperScissors {
 		//flag for determining if the game is a tie or not
 		boolean isTie = true;
 		
-		//user choice
-		int userChoice = picker();
-		
-		//computer choice
-		int computerChoice = random();
-		
-		
-		
+		//as long as it's a tie, continue
+		do {
+			//user choice
+			int userChoice = picker();
+			//computer choice
+			int computerChoice = random();
+			
+			//this assigns isTie variable, and determines winner
+			isTie = determineWinner(userChoice, computerChoice);
+			
+		} while (isTie);
 	}
 	
 	/**
@@ -72,8 +75,7 @@ public class RockPaperScissors {
 	 * @return returns a boolean for our tie flag in main()
 	 */
 	public static boolean determineWinner(int userChoice, int computerChoice) {
-		//1 is rock, 2 is paper, 3 is scissors
-		
+		//1 is rock, 2 is paper, 3 is scissors, -1 for invalid input
 		//first check if our user gave us invalid input
 		if (userChoice == -1) {
 			System.exit(0);
@@ -93,8 +95,6 @@ public class RockPaperScissors {
 			//winner
 			JOptionPane.showMessageDialog(null, "You won!");
 			return false;
-		}
-		
-	}
-	
+		}	
+	}	
 }
