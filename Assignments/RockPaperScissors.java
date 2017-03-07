@@ -6,6 +6,9 @@ import javax.swing.*; //for JOptionPane
 public class RockPaperScissors {
 
 	public static void main(String[] args) {
+		//flag for determining if the game is a tie or not
+		boolean isTie = true;
+		
 		//user choice
 		int userChoice = picker();
 		
@@ -57,9 +60,41 @@ public class RockPaperScissors {
 		case 's':
 			return 3; //scissors
 		default:
-			JOptionPane.showMessageDialog(null,"Invalid choice");
+			JOptionPane.showMessageDialog(null,"Invalid choice. Terminating.");
 			return -1; //this will be our value for an invalid choice
 		}
+	}
+	
+	/**
+	 * This method determines the winner, or if it's a tie
+	 * @param Parameter 1: int value for user choice
+	 * @param Parameter 2: int value for computer choice
+	 * @return returns a boolean for our tie flag in main()
+	 */
+	public static boolean determineWinner(int userChoice, int computerChoice) {
+		//1 is rock, 2 is paper, 3 is scissors
+		
+		//first check if our user gave us invalid input
+		if (userChoice == -1) {
+			System.exit(0);
+		}
+		
+		//determine winner or tie
+		if (userChoice == computerChoice) {
+			JOptionPane.showMessageDialog(null, "TIE! Play again");
+			return true;
+		} else if ((userChoice == 1 && computerChoice == 2) ||
+				   (userChoice == 2 && computerChoice == 3) ||
+				   (userChoice == 3 && computerChoice == 1)) {
+			//ALL LOSING CASES ^^^
+			JOptionPane.showMessageDialog(null, "You lost!");
+			return false;
+		} else {
+			//winner
+			JOptionPane.showMessageDialog(null, "You won!");
+			return false;
+		}
+		
 	}
 	
 }
