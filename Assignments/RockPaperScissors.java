@@ -6,18 +6,39 @@ import javax.swing.*; //for JOptionPane
 public class RockPaperScissors {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		//user choice
+		int userChoice = picker();
+		
+		//computer choice
+		int computerChoice = random();
+		
+		
+		
 	}
 	
 	/**
-	 * This method generates a random integer between 1-3
+	 * This method generates a random integer between 1-3, and displays choice
 	 * @return returns the random int
 	 */
 	public static int random() {
-		//generate random int between 1-3 and return it
+		//generate random int between 1-3, display and return it
 		Random rand = new Random();
-		return rand.nextInt(3) + 1;
+		int randInt = rand.nextInt(3) + 1;
+		
+		//display what the computer chose, using switch statement
+		switch (randInt) {
+		case 1:
+			JOptionPane.showMessageDialog(null, "Computer chose Rock");
+			break;
+		case 2:
+			JOptionPane.showMessageDialog(null, "Computer chose Paper");
+			break;
+		default:
+			JOptionPane.showMessageDialog(null, "Computer chose Scissors");
+			break;
+		}
+		
+		return randInt;
 	}
 	
 	/**
@@ -30,15 +51,15 @@ public class RockPaperScissors {
 		char choiceChar = choice.toLowerCase().charAt(0);
 		switch (choiceChar) {
 		case 'r':
-			return 1;
+			return 1; //rock
 		case 'p':
-			return 2;
+			return 2; //paper
 		case 's':
-			return 3;
+			return 3; //scissors
 		default:
 			JOptionPane.showMessageDialog(null,"Invalid choice");
-			return -1;
+			return -1; //this will be our value for an invalid choice
 		}
-		
 	}
+	
 }
