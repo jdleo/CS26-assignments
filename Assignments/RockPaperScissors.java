@@ -53,7 +53,7 @@ public class RockPaperScissors {
 	 */
 	public static int picker() {
 		String choice = JOptionPane.showInputDialog("Rock, Paper, or Scissors?"+
-													"\n You can use r,p, or s");
+													"\n You can use r, p, or s");
 		char choiceChar = choice.toLowerCase().charAt(0);
 		switch (choiceChar) {
 		case 'r':
