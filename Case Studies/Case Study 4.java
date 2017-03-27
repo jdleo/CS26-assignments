@@ -1,11 +1,4 @@
-public class CaseStudy4 {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
-}import java.util.ArrayList;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class CaseStudy4 {
