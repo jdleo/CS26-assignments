@@ -1,3 +1,8 @@
-/** a program demonstrating parallel arrays.
-objective here is to create a program with two seperate parallel arrays that store name and payroll information.
-*/
+public class CaseStudy4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
