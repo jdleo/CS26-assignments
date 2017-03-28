@@ -21,10 +21,10 @@ public class CaseStudy6 {
 		//display appropriate message to user
 		if (valid) {
 			String m = String.format("%s \n VALID", serialNumber);
-			JOptionPane.showMessageDialog(null, m);
+			msg(m);
 		} else {
 			String m = String.format("%s \n INVALID", serialNumber);
-			JOptionPane.showMessageDialog(null, m);
+			msg(m);
 		}
 	}
 	
@@ -56,16 +56,20 @@ public class CaseStudy6 {
 					if (checkFormat(sets)) {
 						return true;
 					} else {
+						msg("Serial number must be alpha-numeric-alpha format.");
 						return false;
 					}
 				} else {
+					msg("Serial number must have three sets divided by a hyphen");
 					return false;
 				}
 			} else {
+				msg("Serial number must have three hyphens");
 				return false;
 			}
 			
 		} else {
+			msg("Serial number must have 15 characters in length.");
 			return false;
 		}
 	}
@@ -109,6 +113,14 @@ public class CaseStudy6 {
 			return false;
 		}
 		
+	}
+	
+	/**
+	 * Just a reusable method for displaying JOptionPane messages
+	 * @param m
+	 */
+	public static void msg(String m) {
+		JOptionPane.showMessageDialog(null, m);
 	}
 
 }
