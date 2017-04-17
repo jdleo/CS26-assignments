@@ -88,11 +88,12 @@ public class DriverExam {
 		int missed[] = new int[totalIncorrect(studentAnswers, answerKey)];
 		
 		// for-loop 
-		for (int index = 0; index < studentAnswers.length; index++) {
+		for (int index = 0, index2 = 0; index < studentAnswers.length; index++) {
 			if ( !studentAnswers[index].equals(answerKey[index]) ) {
 				
 				//has to be index+1 because we want the exact question #
-				missed[index] = index+1;
+				missed[index2] = index+1;
+				index2++;
 			}
 		}
 		
