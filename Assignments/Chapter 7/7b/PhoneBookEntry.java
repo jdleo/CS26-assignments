@@ -2,14 +2,14 @@ import javax.swing.JOptionPane;
 
 public class PhoneBookEntry {
 	private String name;
-	private int number;
+	private long number;
 	
 	/**
 	 * Constructor for PhoneBookEntry object
 	 * @param name
 	 * @param number
 	 */
-	public PhoneBookEntry(String name, int number) {
+	public PhoneBookEntry(String name, long number) {
 		this.name = name;
 		this.number = number;
 	}
@@ -20,7 +20,7 @@ public class PhoneBookEntry {
 		return name;
 	}
 
-	public int getNumber() {
+	public long getNumber() {
 		return number;
 	}
 	
@@ -28,7 +28,7 @@ public class PhoneBookEntry {
 		this.name = name;
 	}
 	
-	public void setNumber(int number) {
+	public void setNumber(long number) {
 		this.number = number;
 	}
 	// --- END GETTERS/SETTERS --- //
@@ -39,5 +39,7 @@ public class PhoneBookEntry {
 	public void display() {
 		String msg = String.format("Name: %s\n Number: %s", this.name, this.number);
 		JOptionPane.showMessageDialog(null, msg);
-	}	
+	}
+	
+	
 }
