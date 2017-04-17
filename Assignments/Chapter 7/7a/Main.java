@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 import javax.swing.JOptionPane;
 
 /** @author John Leonardo */
@@ -37,7 +39,7 @@ public class Main {
 					+ "Questions Missed: %s", 
 					exam.totalCorrect(studentAnswers, exam.getAnswerKey()),
 					exam.totalIncorrect(studentAnswers, exam.getAnswerKey()),
-					exam.questionsMissed(studentAnswers, exam.getAnswerKey()).toString());
+					Arrays.toString(exam.questionsMissed(studentAnswers, exam.getAnswerKey())));
 			JOptionPane.showMessageDialog(null, prompt);
 		} else {
 			String prompt = String.format("YOU FAILED! \n"
@@ -46,7 +48,7 @@ public class Main {
 					+ "Questions Missed: %s", 
 					exam.totalCorrect(studentAnswers, exam.getAnswerKey()),
 					exam.totalIncorrect(studentAnswers, exam.getAnswerKey()),
-					exam.questionsMissed(studentAnswers, exam.getAnswerKey()).toString());
+					Arrays.toString(exam.questionsMissed(studentAnswers, exam.getAnswerKey())));
 			JOptionPane.showMessageDialog(null, prompt);
 		}
 	}
