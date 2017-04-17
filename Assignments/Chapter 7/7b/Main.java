@@ -12,19 +12,22 @@ public class Main {
 											+"Enter a 0 at any time to terminate the program.\n"+
 											"For phone numbers, you can only use digits, or it will crash.");
 		//temporary variable to check if we should quit or not
-		int input = 0;
+		long input = 0;
 		int count = 1;
 		do {
 			String name = JOptionPane.showInputDialog("Enter the name for person #" + count);
 			String tempNumber = JOptionPane.showInputDialog("Enter the number for person #" + count);
 			
-			int number = Integer.parseInt(tempNumber);
+			long number = Long.parseLong(tempNumber);
+			input = number;
 			
 			//create PhoneBookEntry object
 			PhoneBookEntry entry = new PhoneBookEntry(name, number);
 			
 			//add object to array
 			entries.add(entry);
+			
+			count +=1;
 			
 		} while (input != 0);
 		
