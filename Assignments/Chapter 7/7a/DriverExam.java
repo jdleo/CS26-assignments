@@ -40,6 +40,12 @@ public class DriverExam {
 		}
 	}
 	
+	/**
+	 * Method for determining how many correct answers the student had
+	 * @param studentAnswers
+	 * @param answerKey
+	 * @return amount of correct answers (int)
+	 */
 	public static int totalCorrect(String[] studentAnswers, String[] answerKey) {
 		int totalCorrect = 0;
 		
@@ -53,12 +59,44 @@ public class DriverExam {
 		return totalCorrect;
 	}
 	
+	/**
+	 * Method for determining number of incorrect answers the student had
+	 * @param studentAnswers
+	 * @param answerKey
+	 * @return number of incorrect answers (int)
+	 */
 	public static int totalIncorrect(String[] studentAnswers, String[] answerKey) {
+		int totalIncorrect = 0;
 		
+		// for-loop to loop through the array
+				for (int index = 0; index < studentAnswers.length; index++) {
+					if ( !studentAnswers[index].equals(answerKey[index]) ) {
+						totalIncorrect += 1;
+					}
+				}
+				
+		return totalIncorrect;
 	}
 	
+	/**
+	 * Method for giving us a list of the question numbers student got wrong
+	 * @param studentAnswers
+	 * @param answerKey
+	 * @return int[] object with question numbers
+	 */
 	public static int[] questionsMissed(String[] studentAnswers, String[] answerKey) {
+		int missed[] = new int[totalIncorrect(studentAnswers, answerKey)];
 		
+		// for-loop 
+		for (int index = 0; index < studentAnswers.length; index++) {
+			if ( !studentAnswers[index].equals(answerKey[index]) ) {
+				
+				//has to be index+1 because we want the exact question #
+				missed[index] = index+1;
+			}
+		}
+		
+		return missed;
 	}
 	
 	
